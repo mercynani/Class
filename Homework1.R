@@ -1,6 +1,6 @@
 lprec <- make.lp(9, 3)
 #Defaults to Maximize objective function
-set.objfn(lprec, c(385, 330,375))
+set.objfn (lprec, c(385, 330,375)
 add.constraint(lprec, c(1,1,1), "<=", 750)
 add.constraint(lprec, c(1,1,1), "<=", 900)
 add.constraint(lprec, c(1,1,1), "<=", 450)
@@ -10,16 +10,14 @@ add.constraint(lprec, c(20,15,12), "<=", 5000)
 add.constraint(lprec, c(1,1,1), "<=", 900)
 add.constraint(lprec, c(1,1,1), "<=", 1200)
 add.constraint(lprec, c(1,1,1), "<=", 750)
-#set.bounds(lprec, lower = c(0, 0), columns = c(1, 2)) #Not really needed
-#set.bounds(lprec, upper = 100, columns = 4) If you want to set bounds for a column
-RowNames <- c("Plant1", "Plant2", "Plant3")
-ColNames <- c("Product1", "Product2")
+RowNames <- c("CapacityP1", "CapacityP2", "CapacityP3", 'SpaceP1',"spaceP2","Spacep3", "SalesP1", "SalesP2","SalesP3")
+ColNames <- c("Plant1", "Plant2")
 dimnames(lprec) <- list(RowNames, ColNames)
 lprec
 # Alternatively, write your model in lp format
 write.lp(lprec,'Homework.lp',type='lp') # we will use this format soon
 solve(lprec)
-get.objective(lprec) * -1
+get.objective(lprec) * 
 get.variables(lprec)
 get.constraints(lprec)
 get.sensitivity.objex(lprec)
