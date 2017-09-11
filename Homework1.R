@@ -18,7 +18,7 @@ lprec
 # Alternatively, write your model in lp format
 write.lp(lprec,'Homework.lp',type='lp') # we will use this format soon
 solve(lprec)
-get.objective(lprec) * 
+get.objective(lprec) * -1
 get.variables(lprec)
 get.constraints(lprec)
 get.sensitivity.objex(lprec)
