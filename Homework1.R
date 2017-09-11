@@ -1,6 +1,6 @@
 lprec <- make.lp(9, 3)
 #Defaults to Maximize objective function
-set.objfn (lprec, c(385, 330,375)
+set.objfn (lprec, c(385, 330,375))
 add.constraint(lprec, c(1,1,1), "<=", 750)
 add.constraint(lprec, c(1,1,1), "<=", 900)
 add.constraint(lprec, c(1,1,1), "<=", 450)
