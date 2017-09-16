@@ -14,4 +14,3 @@ Sales3: + X1S + X2S + X3S <= 750;
 Cap1: + X1L + X1M + X1S <= 750;
 Cap2: + X2L + X2M + X2S <= 900;
 Cap3: + X3L + X3M + X3S <= 450;
-
