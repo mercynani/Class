@@ -7,4 +7,3 @@ get.variables(x)
 get.constraints(x)
 get.sensitivity.obj(x)
 get.sensitivity.rhs(x)
-
