@@ -1,9 +1,9 @@
 library(lpSolveAPI)
-x <- read.lp("Homework.lp")
-x
-solve(x)
-get.objective(x)
-get.variables(x)
-get.constraints(x)
-get.sensitivity.obj(x)
-get.sensitivity.rhs(x)
+X <- read.lp("Homework.lp")
+X
+solve(X)
+get.objective(X)
+get.variables(X)
+get.constraints(X)
+get.sensitivity.obj(X)
+get.sensitivity.rhs(X)
