@@ -8,10 +8,15 @@ output: html_notebook
 #decision variables xij (i=1,2,3....11 j=A,B,C)
 #objective function includes parameters Availability, Degree, Skills, Experience
 #constraints: Each project must be assigned to 3 or 4 students
+#Constraint: grp annot have less that 3 and more than 4 students
+#constraint: Availability(f) <=5
+#constraint: undergraduate degree(g) <=5
+#constraint: Presentation skill(h) <=5
+#constraint: Prior experience(I) <=5
 
 ```{r}
 library(lpSolveAPI)
-x<- read.lp("GrpAssignmentMercy.lp")
+x <- read.lp("grpassignmercy.lp")
 x
 solve(x)
 get.objective(x)
