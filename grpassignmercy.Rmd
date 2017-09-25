@@ -8,10 +8,10 @@ output: html_notebook
 #decision variables xij (i=1,2,3....11 j=a,b,c)
 #objective function includes parameters Availability, Degree, Skills, Experience
 #Constraint: grp cannot have less that 3 and more than 4 students
-#constraint: Availability(f) <=5
-#constraint: undergraduate degree(g) <=5
-#constraint: Presentation skill(h) <=5
-#constraint: Prior experience(I) <=5
+#constraint: Availability <=5
+#constraint: undergraduate degree <=5
+#constraint: Presentation skill <=5
+#constraint: Prior experience <=5
 
 ```{r}
 library(lpSolveAPI)
