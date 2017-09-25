@@ -17,4 +17,3 @@ x1a + x1b + x1c + x2a + x2b + x2c + x3a + x3b + x3c + x4a + x4b + x4c + x5a + x5
 
 1.4ix1a + 1.4ix1b + 1.4ix1c + 1ix2a + 1ix2b + 1ix2c + 1ix3a + 1ix3b + 1ix3c + 1.4ix4a + 1.4ix4b + 1.4ix4c + 5ix5a + 5ix5b + 5ix5c + 3.8ix6a + 3.8ix6b + 3.8ix6c + 2.6ix7a + 2.6ix7b + 2.6ix7c + 4.2ix8a + 4.2ix8b + 4.2ix8c + 1ix9a + 1ix9b + 1ix9c + 1.8ix10a + 1.8ix10b + 1.8ix10c + 3.4ix11a + 3.4ix11b + 3.4ix11c <= 5;
 
-
