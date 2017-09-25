@@ -1,20 +1,18 @@
 /* Objective function */
-max: 3fx1a + 3fx1b + 3fx1c + 2.2fx2a + 2.2fx2b + 2.2fx2c + 2.6fx3a + 2.6fx3b + 2.6fx3c + 3.8fx4a + 3.8fx4b + 3.8fx4c + 3fx5a + 3fx5b + 3fx5c + 3.8fx6a + 3.8fx6b + 3.8fx6c + 3.8fx7a + 3.8fx7b + 3.8fx7c + 4.6fx8a + 4.6fx8b + 4.6fx8c + 3fx9a + 3fx9b + 3fx9c + 2.6fx10a + 2.6fx10b + 2.6fx10c + 2.6fx11a + 2.6fx11b + 2.6fx11c + 4gx1a + 4gx1b + 4gx1c + 3gx2a + 3gx2b + 3gx2c + 1gx3a + 1gx3b + 1gx3c + 4gx4a + 4gx4b + 4gx4c + 5gx5a + 5gx5b + 5gx5c + 4gx6a + 4gx6b + 4gx6c + 5gx7a + 5gx7b + 5gx7c + 4gx8a + 4gx8b + 4gx8c + 4gx9a + 4gx9b + 4gx9c + 5gx10a + 5gx10b + 5gx10c + 4gx11a + 4gx11b + 4gx11c + 5hx1a + 5hx1b + 5hx1c + 4hx2a + 4hx2b + 4hx2c + 4hx3a + 4hx3b + 4hx3c + 4hx4a + 4hx4b + 4hx4c + 5hx5a + 5hx5b + 5hx5c + 5hx6a + 5hx6b + 5hx6c + 4hx7a + 4hx7b + 4hx7c + 4hx8a + 4hx8b + 4hx8c + 4hx9a + 4hx9b + 4hx9c + 4hx10a + 4hx10b + 4hx10c + 4hx11a + 4hx11b + 4hx11c + 1.4ix1a + 1.4ix1b + 1.4ix1c + 1ix2a + 1ix2b + 1ix2c + 1ix3a + 1ix3b + 1ix3c + 1.4ix4a + 1.4ix4b + 1.4ix4c + 5ix5a + 5ix5b + 5ix5c + 3.8ix6a + 3.8ix6b + 3.8ix6c + 2.6ix7a + 2.6ix7b + 2.6ix7c + 4.2ix8a + 4.2ix8b + 4.2ix8c + 1ix9a + 1ix9b + 1ix9c + 1.8ix10a + 1.8ix10b + 1.8ix10c + 3.4ix11a + 3.4ix11b + 3.4ix11c;
+max: 3x1a + 3x1b + 3x1c + 2.2x2a + 2.2x2b + 2.2x2c + 2.6x3a + 2.6x3b + 2.6x3c + 3.8x4a + 3.8x4b + 3.8x4c + 3x5a + 3x5b + 3x5c + 3.8x6a + 3.8x6b + 3.8x6c + 3.8x7a + 3.8x7b + 3.8x7c + 4.6x8a + 4.6x8b + 4.6x8c + 3x9a + 3x9b + 3x9c + 2.6x10a + 2.6x10b + 2.6x10c + 2.6x11a + 2.6x11b + 2.6x11c + 4x1a + 4x1b + 4x1c + 3x2a + 3x2b + 3x2c + 1x3a + 1x3b + 1x3c + 4x4a + 4x4b + 4x4c + 5x5a + 5x5b + 5x5c + 4x6a + 4x6b + 4x6c + 5x7a + 5x7b + 5x7c + 4x8a + 4x8b + 4x8c + 4x9a + 4x9b + 4x9c + 5x10a + 5x10b + 5x10c + 4x11a + 4x11b + 4x11c + 5x1a + 5x1b + 5x1c + 4x2a + 4x2b + 4x2c + 4x3a + 4x3b + 4x3c + 4x4a + 4x4b + 4x4c + 5x5a + 5x5b + 5x5c + 5x6a + 5x6b + 5x6c + 4x7a + 4x7b + 4x7c + 4x8a + 4x8b + 4x8c + 4x9a + 4x9b + 4x9c + 4x10a + 4x10b + 4x10c + 4x11a + 4x11b + 4x11c + 1.4x1a + 1.4x1b + 1.4x1c + 1x2a + 1x2b + 1x2c + 1x3a + 1x3b + 1x3c + 1.4x4a + 1.4x4b + 1.4x4c + 5x5a + 5x5b + 5x5c + 3.8x6a + 3.8x6b + 3.8x6c + 2.6x7a + 2.6x7b + 2.6x7c + 4.2x8a + 4.2x8b + 4.2x8c + 1x9a + 1x9b + 1x9c + 1.8x10a + 1.8x10b + 1.8x10c + 3.4x11a + 3.4x11b + 3.4x11c;
 
 
 /* Constraints */
 
-x1a + x1b + x1c + x2a + x2b + x2c + x3a + x3b + x3c + x4a + x4b + x4c + x5a + x5b + x5c + x6a + x6b + x6c + x7a + x7b + x7c + x8a + x8b + x8c + x9a + x9b + x9c + x10a + x10b + x10c + x11a + x11b + x11c >= 3;
+3 <= x1a + x1b + x1c + x2a + x2b + x2c + x3a + x3b + x3c + x4a + x4b + x4c + x5a + x5b + x5c + x6a + x6b + x6c + x7a + x7b + x7c + x8a + x8b + x8c + x9a + x9b + x9c + x10a + x10b + x10c + x11a + x11b + x11c <= 4;
 
-x1a + x1b + x1c + x2a + x2b + x2c + x3a + x3b + x3c + x4a + x4b + x4c + x5a + x5b + x5c + x6a + x6b + x6c + x7a + x7b + x7c + x8a + x8b + x8c + x9a + x9b + x9c + x10a + x10b + x10c + x11a + x11b + x11c <= 4;
+3x1a + 3x1b + 3x1c + 2.2x2a + 2.2x2b + 2.2x2c + 2.6x3a + 2.6x3b + 2.6x3c + 3.8x4a + 3.8x4b + 3.8x4c + 3x5a + 3x5b + 3x5c + 3.8x6a + 3.8x6b + 3.8x6c + 3.8x7a + 3.8x7b + 3.8x7c + 4.6x8a + 4.6x8b + 4.6x8c + 3x9a + 3x9b + 3x9c + 2.6x10a + 2.6x10b + 2.6x10c + 2.6x11a + 2.6x11b + 2.6x11c <= 5;
 
-3fx1a + 3fx1b + 3fx1c + 2.2fx2a + 2.2fx2b + 2.2fx2c + 2.6fx3a + 2.6fx3b + 2.6fx3c + 3.8fx4a + 3.8fx4b + 3.8fx4c + 3fx5a + 3fx5b + 3fx5c + 3.8fx6a + 3.8fx6b + 3.8fx6c + 3.8fx7a + 3.8fx7b + 3.8fx7c + 4.6fx8a + 4.6fx8b + 4.6fx8c + 3fx9a + 3fx9b + 3fx9c + 2.6fx10a + 2.6fx10b + 2.6fx10c + 2.6fx11a + 2.6fx11b + 2.6fx11c <= 5;
-
-4gx1a + 4gx1b + 4gx1c + 3gx2a + 3gx2b + 3gx2c + 1gx3a + 1gx3b + 1gx3c + 4gx4a + 4gx4b + 4gx4c + 5gx5a + 5gx5b + 5gx5c + 4gx6a + 4gx6b + 4gx6c + 5gx7a + 5gx7b + 5gx7c + 4gx8a + 4gx8b + 4gx8c + 4gx9a + 4gx9b + 4gx9c + 5gx10a + 5gx10b + 5gx10c + 4gx11a + 4gx11b + 4gx11c <= 5;
+4x1a + 4x1b + 4x1c + 3x2a + 3x2b + 3x2c + 1x3a + 1x3b + 1x3c + 4x4a + 4x4b + 4x4c + 5x5a + 5x5b + 5x5c + 4x6a + 4x6b + 4x6c + 5x7a + 5x7b + 5x7c + 4x8a + 4x8b + 4x8c + 4x9a + 4x9b + 4x9c + 5x10a + 5x10b + 5x10c + 4x11a + 4x11b + 4x11c <= 5;
 
 
-5hx1a + 5hx1b + 5hx1c + 4hx2a + 4hx2b + 4hx2c + 4hx3a + 4hx3b + 4hx3c + 4hx4a + 4hx4b + 4hx4c + 5hx5a + 5hx5b + 5hx5c + 5hx6a + 5hx6b + 5hx6c + 4hx7a + 4hx7b + 4hx7c + 4hx8a + 4hx8b + 4hx8c + 4hx9a + 4hx9b + 4hx9c + 4hx10a + 4hx10b + 4hx10c + 4hx11a + 4hx11b + 4hx11c <= 5;
+5x1a + 5x1b + 5x1c + 4x2a + 4x2b + 4x2c + 4x3a + 4x3b + 4x3c + 4x4a + 4x4b + 4x4c + 5x5a + 5x5b + 5x5c + 5x6a + 5x6b + 5x6c + 4x7a + 4x7b + 4x7c + 4x8a + 4x8b + 4x8c + 4x9a + 4x9b + 4x9c + 4x10a + 4x10b + 4x10c + 4x11a + 4x11b + 4x11c <= 5;
 
-1.4ix1a + 1.4ix1b + 1.4ix1c + 1ix2a + 1ix2b + 1ix2c + 1ix3a + 1ix3b + 1ix3c + 1.4ix4a + 1.4ix4b + 1.4ix4c + 5ix5a + 5ix5b + 5ix5c + 3.8ix6a + 3.8ix6b + 3.8ix6c + 2.6ix7a + 2.6ix7b + 2.6ix7c + 4.2ix8a + 4.2ix8b + 4.2ix8c + 1ix9a + 1ix9b + 1ix9c + 1.8ix10a + 1.8ix10b + 1.8ix10c + 3.4ix11a + 3.4ix11b + 3.4ix11c <= 5;
+1.4x1a + 1.4x1b + 1.4x1c + 1x2a + 1x2b + 1x2c + 1x3a + 1x3b + 1x3c + 1.4x4a + 1.4x4b + 1.4x4c + 5x5a + 5x5b + 5x5c + 3.8x6a + 3.8x6b + 3.8x6c + 2.6x7a + 2.6x7b + 2.6x7c + 4.2x8a + 4.2x8b + 4.2x8c + 1x9a + 1x9b + 1x9c + 1.8x10a + 1.8x10b + 1.8x10c + 3.4x11a + 3.4x11b + 3.4x11c <= 5;
 
 
