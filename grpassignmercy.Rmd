@@ -7,6 +7,7 @@ output: html_notebook
 #obj is to maximise the chance that each group does well on the project
 #decision variables xij (i=1,2,3....11 j=a,b,c)
 #objective function includes parameters Availability, Degree, Skills, Experience
+#each student must be assigned to a group
 #Constraint: grp cannot have less that 3 and more than 4 students
 #constraint: Availability <=5
 #constraint: undergraduate degree <=5

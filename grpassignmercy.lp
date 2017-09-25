@@ -4,6 +4,8 @@ max: 3x1a + 3x1b + 3x1c + 2.2x2a + 2.2x2b + 2.2x2c + 2.6x3a + 2.6x3b + 2.6x3c + 
 
 
 /* Constraints */
+x1a + x1b + x1c + x2a + x2b + x2c + x3a + x3b + x3c + x4a + x4b + x4c + x5a + x5b + x5c + x6a + x6b + x6c + x7a + x7b + x7c + x8a + x8b + x8c + x9a + x9b + x9c + x10a + x10b + x10c + x11a + x11b + x11c = 1;
+
 x1a + x1b + x1c + x2a + x2b + x2c + x3a + x3b + x3c + x4a + x4b + x4c + x5a + x5b + x5c + x6a + x6b + x6c + x7a + x7b + x7c + x8a + x8b + x8c + x9a + x9b + x9c + x10a + x10b + x10c + x11a + x11b + x11c >= 3;
 
 x1a + x1b + x1c + x2a + x2b + x2c + x3a + x3b + x3c + x4a + x4b + x4c + x5a + x5b + x5c + x6a + x6b + x6c + x7a + x7b + x7c + x8a + x8b + x8c + x9a + x9b + x9c + x10a + x10b + x10c + x11a + x11b + x11c <= 4;
