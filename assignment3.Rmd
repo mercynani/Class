@@ -17,6 +17,7 @@ if bi = 0, x1 <= 200, y1 = 0
 bi = 1, x1 <=200, x1 >=200 y1=200
 
 
+
 ```{r}
 library(lpSolveAPI)
 x <- read.lp("assignment3.lp")
