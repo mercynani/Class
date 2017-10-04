@@ -10,9 +10,9 @@ si = stock at the end of month i
 bi = 1 if > 200 units are purchased on month i
 di = monthly demand
 where i = month 1,2,3,4
-total purchase in a given month = qi + ri
-constraints
 monthly total purchase = xi + yi
+obj funct = cost/unit xi + cost/unit - 2 yi + 2stock
+constraints
 if bi = 0, x1 <= 200, y1 = 0
 bi = 1, x1 <=200, x1 >=200 y1=200
 
