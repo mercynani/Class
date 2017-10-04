@@ -172,26 +172,50 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
-<p>let quantity purchased &lt;= 200 be Qi where i = month 1,2,3,4 quantity puchased &gt; 200 be Ri Si stock at the end of the month bi = 1 if &gt; 200 units where purchased in a particular month</p>
+<div id="definining-the-variables" class="section level1">
+<h1>definining the variables</h1>
+</div>
+<div id="qi-quantity-purchased-in-month-i-200" class="section level1">
+<h1>qi = quantity purchased in month i &lt;= 200</h1>
+</div>
+<div id="ri-quantity-purchased-in-month-i-200" class="section level1">
+<h1>ri = quantity purchased in month i &gt; 200</h1>
+</div>
+<div id="si-representing-the-stock-at-the-end-of-month-i" class="section level1">
+<h1>si = representing the stock at the end of month i</h1>
+</div>
+<div id="bi-1-if-200-units-are-purchased-on-month-i" class="section level1">
+<h1>bi = 1 if &gt; 200 units are purchased on month i</h1>
+</div>
+<div id="di-monthly-demand" class="section level1">
+<h1>di = monthly demand</h1>
+</div>
+<div id="where-i-month-1234" class="section level1">
+<h1>where i = month 1,2,3,4</h1>
+</div>
+<div id="total-purchase-in-a-given-month-qi-ri" class="section level1">
+<h1>total purchase in a given month = qi + ri</h1>
+</div>
+<div id="constraints" class="section level1">
+<h1>constraints</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShscFNvbHZlQVBJKVxueCA8LSByZWFkLmxwKFwiYXNzaWdubWVudDMubHBcIilcbnhcbnNvbHZlKHgpXG5nZXQub2JqZWN0aXZlKHgpXG5nZXQudmFyaWFibGVzKHgpXG5nZXQuY29uc3RyYWludHMoeClcbmdldC5zZW5zaXRpdml0eS5yaHMoeClcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShscFNvbHZlQVBJKVxueCA8LSByZWFkLmxwKFwiYXNzaWdubWVudDMubHBcIilcbmBgYCJ9 -->
 <pre class="r"><code>library(lpSolveAPI)
-x &lt;- read.lp(&quot;assignment3.lp&quot;)
-x
-solve(x)
-get.objective(x)
-get.variables(x)
-get.constraints(x)
-get.sensitivity.rhs(x)</code></pre>
+x &lt;- read.lp(&quot;assignment3.lp&quot;)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gcmVhZC5scChcImFzc2lnbm1lbnQzLmxwXCIpIDogXG4gIGNvdWxkIG5vdCBpbnRlcnByZXQgYXNzaWdubWVudDMubHAgYXMgYW4gbHAgZmlsZVxuIn0= -->
+<pre><code>Error in read.lp(&quot;assignment3.lp&quot;) : 
+  could not interpret assignment3.lp as an lp file</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
 <!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpsZXQgcXVhbnRpdHkgcHVyY2hhc2VkIDw9IDIwMCBiZSBRaSB3aGVyZSBpID0gbW9udGggMSwyLDMsNA0KcXVhbnRpdHkgcHVjaGFzZWQgPiAyMDAgYmUgUmkNClNpIHN0b2NrIGF0IHRoZSBlbmQgb2YgdGhlIG1vbnRoDQpiaSA9IDEgaWYgPiAyMDAgdW5pdHMgd2hlcmUgcHVyY2hhc2VkIGluIGEgcGFydGljdWxhciBtb250aA0KDQpgYGB7cn0NCmxpYnJhcnkobHBTb2x2ZUFQSSkNCnggPC0gcmVhZC5scCgiYXNzaWdubWVudDMubHAiKQ0KeA0Kc29sdmUoeCkNCmdldC5vYmplY3RpdmUoeCkNCmdldC52YXJpYWJsZXMoeCkNCmdldC5jb25zdHJhaW50cyh4KQ0KZ2V0LnNlbnNpdGl2aXR5LnJocyh4KQ0KYGBgDQoNCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDdHJsK0FsdCtJKi4NCg0KV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDdHJsK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojZGVmaW5pbmluZyB0aGUgdmFyaWFibGVzDQojcWkgPSBxdWFudGl0eSBwdXJjaGFzZWQgaW4gbW9udGggaSA8PSAyMDANCiNyaSA9IHF1YW50aXR5IHB1cmNoYXNlZCBpbiBtb250aCBpID4gMjAwDQojc2kgPSByZXByZXNlbnRpbmcgdGhlIHN0b2NrIGF0IHRoZSBlbmQgb2YgbW9udGggaQ0KI2JpID0gMSBpZiA+IDIwMCB1bml0cyBhcmUgcHVyY2hhc2VkIG9uIG1vbnRoIGkNCiNkaSA9IG1vbnRobHkgZGVtYW5kDQojd2hlcmUgaSA9IG1vbnRoIDEsMiwzLDQNCiN0b3RhbCBwdXJjaGFzZSBpbiBhIGdpdmVuIG1vbnRoID0gcWkgKyByaQ0KI2NvbnN0cmFpbnRzDQoNCmBgYHtyfQ0KbGlicmFyeShscFNvbHZlQVBJKQ0KeCA8LSByZWFkLmxwKCJhc3NpZ25tZW50My5scCIpDQp4DQpzb2x2ZSh4KQ0KZ2V0Lm9iamVjdGl2ZSh4KQ0KZ2V0LnZhcmlhYmxlcyh4KQ0KZ2V0LmNvbnN0cmFpbnRzKHgpDQpnZXQuc2Vuc2l0aXZpdHkucmhzKHgpDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg==</div>
 
 
 
