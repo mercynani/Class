@@ -6,12 +6,16 @@ output: html_notebook
 definining the variables
 xi = quantity purchased in month i <= 200
 yi = quantity purchased in month i > 200
-si = representing the stock at the end of month i
+si = stock at the end of month i
 bi = 1 if > 200 units are purchased on month i
 di = monthly demand
 where i = month 1,2,3,4
 total purchase in a given month = qi + ri
 constraints
+monthly total purchase = xi + yi
+if bi = 0, x1 <= 200, y1 = 0
+bi = 1, x1 <=200, x1 >=200 y1=200
+
 
 ```{r}
 library(lpSolveAPI)
