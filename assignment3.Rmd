@@ -3,15 +3,15 @@ title: "R Notebook"
 output: html_notebook
 ---
 
-#definining the variables
-#qi = quantity purchased in month i <= 200
-#ri = quantity purchased in month i > 200
-#si = representing the stock at the end of month i
-#bi = 1 if > 200 units are purchased on month i
-#di = monthly demand
-#where i = month 1,2,3,4
-#total purchase in a given month = qi + ri
-#constraints
+definining the variables
+xi = quantity purchased in month i <= 200
+yi = quantity purchased in month i > 200
+si = representing the stock at the end of month i
+bi = 1 if > 200 units are purchased on month i
+di = monthly demand
+where i = month 1,2,3,4
+total purchase in a given month = qi + ri
+constraints
 
 ```{r}
 library(lpSolveAPI)

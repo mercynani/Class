@@ -172,50 +172,71 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
-<div id="definining-the-variables" class="section level1">
-<h1>definining the variables</h1>
-</div>
-<div id="qi-quantity-purchased-in-month-i-200" class="section level1">
-<h1>qi = quantity purchased in month i &lt;= 200</h1>
-</div>
-<div id="ri-quantity-purchased-in-month-i-200" class="section level1">
-<h1>ri = quantity purchased in month i &gt; 200</h1>
-</div>
-<div id="si-representing-the-stock-at-the-end-of-month-i" class="section level1">
-<h1>si = representing the stock at the end of month i</h1>
-</div>
-<div id="bi-1-if-200-units-are-purchased-on-month-i" class="section level1">
-<h1>bi = 1 if &gt; 200 units are purchased on month i</h1>
-</div>
-<div id="di-monthly-demand" class="section level1">
-<h1>di = monthly demand</h1>
-</div>
-<div id="where-i-month-1234" class="section level1">
-<h1>where i = month 1,2,3,4</h1>
-</div>
-<div id="total-purchase-in-a-given-month-qi-ri" class="section level1">
-<h1>total purchase in a given month = qi + ri</h1>
-</div>
-<div id="constraints" class="section level1">
-<h1>constraints</h1>
+<p>definining the variables xi = quantity purchased in month i &lt;= 200 yi = quantity purchased in month i &gt; 200 si = representing the stock at the end of month i bi = 1 if &gt; 200 units are purchased on month i di = monthly demand where i = month 1,2,3,4 total purchase in a given month = qi + ri constraints</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShscFNvbHZlQVBJKVxueCA8LSByZWFkLmxwKFwiYXNzaWdubWVudDMubHBcIilcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShscFNvbHZlQVBJKVxueCA8LSByZWFkLmxwKFwiYXNzaWdubWVudDMubHBcIilcbnhcbmBgYCJ9 -->
 <pre class="r"><code>library(lpSolveAPI)
-x &lt;- read.lp(&quot;assignment3.lp&quot;)</code></pre>
+x &lt;- read.lp(&quot;assignment3.lp&quot;)
+x</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gcmVhZC5scChcImFzc2lnbm1lbnQzLmxwXCIpIDogXG4gIGNvdWxkIG5vdCBpbnRlcnByZXQgYXNzaWdubWVudDMubHAgYXMgYW4gbHAgZmlsZVxuIn0= -->
-<pre><code>Error in read.lp(&quot;assignment3.lp&quot;) : 
-  could not interpret assignment3.lp as an lp file</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiTW9kZWwgbmFtZTogXG4gIGEgbGluZWFyIHByb2dyYW0gd2l0aCAxNiBkZWNpc2lvbiB2YXJpYWJsZXMgYW5kIDEyIGNvbnN0cmFpbnRzXG4ifQ== -->
+<pre><code>Model name: 
+  a linear program with 16 decision variables and 12 constraints</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc29sdmUoeClcbmBgYCJ9 -->
+<pre class="r"><code>solve(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDBcbiJ9 -->
+<pre><code>[1] 0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2V0Lm9iamVjdGl2ZSh4KVxuYGBgIn0= -->
+<pre class="r"><code>get.objective(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEwMDUwXG4ifQ== -->
+<pre><code>[1] 10050</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2V0LnZhcmlhYmxlcyh4KVxuYGBgIn0= -->
+<pre class="r"><code>get.variables(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAxMjUuMDAwICAgMC4wMDAgICAwLjAwMCAgIDAuMDAwIDYyNS4wMDAgICAwLjAwMCAgIDAuMDAwICAgMC4wMDAgNjAwLjAwMCA0MDAuMDAwIDE1MC4wMDBcblsxMl0gICAwLjAwMCAgIDAuNjI1ICAgMC4wMDAgICAwLjAwMCAgIDAuMDAwXG4ifQ== -->
+<pre><code> [1] 125.000   0.000   0.000   0.000 625.000   0.000   0.000   0.000 600.000 400.000 150.000
+[12]   0.000   0.625   0.000   0.000   0.000</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2V0LmNvbnN0cmFpbnRzKHgpXG5gYGAifQ== -->
+<pre class="r"><code>get.constraints(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAxNTAgMjAwIDI1MCAxNTAgICAwICAgMCAgIDAgICAwICAgMCAgIDAgICAwICAgMFxuIn0= -->
+<pre><code> [1] 150 200 250 150   0   0   0   0   0   0   0   0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2V0LnNlbnNpdGl2aXR5LnJocyh4KVxuYGBgIn0= -->
+<pre class="r"><code>get.sensitivity.rhs(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJGR1YWxzXG4gWzFdIDEwLjMzMzMzMzMgMTIuMzMzMzMzMyAxNC4zMzMzMzMzIDE2LjMzMzMzMzMgIDEuNjY2NjY2NyAgMS42NjY2NjY3ICAxLjY2NjY2NjcgIDEuNjY2NjY2N1xuIFs5XSAtMC4zMzMzMzMzIC0wLjMzMzMzMzMgLTAuMzMzMzMzMyAtMC4zMzMzMzMzICAwLjAwMDAwMDAgIDAuMDAwMDAwMCAgMC4wMDAwMDAwICAwLjAwMDAwMDBcblsxN10gIDAuMDAwMDAwMCAgMC4wMDAwMDAwICAwLjAwMDAwMDAgIDAuMDAwMDAwMCAgMC4wMDAwMDAwICAwLjAwMDAwMDAgIDAuMDAwMDAwMCAxOC4zMzMzMzMzXG5bMjVdICAwLjAwMDAwMDAgIDAuMDAwMDAwMCAgMC4wMDAwMDAwICAwLjAwMDAwMDBcblxuJGR1YWxzZnJvbVxuIFsxXSAtNi4wZSswMiAtNC4wZSswMiAtMS41ZSswMiAgMC4wZSswMCAtMS41ZSswMiAtMS4yZSswMiAtOC4wZSswMSAtMy4wZSswMSAtNC41ZSswMiAgMC4wZSswMFxuWzExXSAgMC4wZSswMCAgMC4wZSswMCAtMS4wZSszMCAgMC4wZSswMCAgMC4wZSswMCAgMC4wZSswMCAtMS4wZSszMCAtMS4wZSszMCAtMS4wZSszMCAtMS4wZSszMFxuWzIxXSAtMS4wZSszMCAtMS4wZSszMCAtMS4wZSszMCAtMS41ZSswMiAtMS4wZSszMCAtMS4wZSszMCAtMS4wZSszMCAtMS4wZSszMFxuXG4kZHVhbHN0aWxsXG4gWzFdIDYuMDAwMDAwZSswMiA2LjUwMDAwMGUrMDIgNy4wMDAwMDBlKzAyIDYuMDAwMDAwZSswMiA5LjAwMDAwMGUrMDEgMC4wMDAwMDBlKzAwIDAuMDAwMDAwZSswMFxuIFs4XSAwLjAwMDAwMGUrMDAgNy41MDAwMDBlKzAyIDYuMDAwMDAwZSswMiA0LjAwMDAwMGUrMDIgMS41MDAwMDBlKzAyIDEuMDAwMDAwZSszMCAxLjAwMDAwMGUrMDJcblsxNV0gNi42NjY2NjdlKzAxIDIuNTAwMDAwZSswMSAxLjAwMDAwMGUrMzAgMS4wMDAwMDBlKzMwIDEuMDAwMDAwZSszMCAxLjAwMDAwMGUrMzAgMS4wMDAwMDBlKzMwXG5bMjJdIDEuMDAwMDAwZSszMCAxLjAwMDAwMGUrMzAgNC41MDAwMDBlKzAyIDEuMDAwMDAwZSszMCAxLjAwMDAwMGUrMzAgMS4wMDAwMDBlKzMwIDEuMDAwMDAwZSszMFxuIn0= -->
+<pre><code>$duals
+ [1] 10.3333333 12.3333333 14.3333333 16.3333333  1.6666667  1.6666667  1.6666667  1.6666667
+ [9] -0.3333333 -0.3333333 -0.3333333 -0.3333333  0.0000000  0.0000000  0.0000000  0.0000000
+[17]  0.0000000  0.0000000  0.0000000  0.0000000  0.0000000  0.0000000  0.0000000 18.3333333
+[25]  0.0000000  0.0000000  0.0000000  0.0000000
+
+$dualsfrom
+ [1] -6.0e+02 -4.0e+02 -1.5e+02  0.0e+00 -1.5e+02 -1.2e+02 -8.0e+01 -3.0e+01 -4.5e+02  0.0e+00
+[11]  0.0e+00  0.0e+00 -1.0e+30  0.0e+00  0.0e+00  0.0e+00 -1.0e+30 -1.0e+30 -1.0e+30 -1.0e+30
+[21] -1.0e+30 -1.0e+30 -1.0e+30 -1.5e+02 -1.0e+30 -1.0e+30 -1.0e+30 -1.0e+30
+
+$dualstill
+ [1] 6.000000e+02 6.500000e+02 7.000000e+02 6.000000e+02 9.000000e+01 0.000000e+00 0.000000e+00
+ [8] 0.000000e+00 7.500000e+02 6.000000e+02 4.000000e+02 1.500000e+02 1.000000e+30 1.000000e+02
+[15] 6.666667e+01 2.500000e+01 1.000000e+30 1.000000e+30 1.000000e+30 1.000000e+30 1.000000e+30
+[22] 1.000000e+30 1.000000e+30 4.500000e+02 1.000000e+30 1.000000e+30 1.000000e+30 1.000000e+30</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
 <!-- rnb-text-end -->
-</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojZGVmaW5pbmluZyB0aGUgdmFyaWFibGVzDQojcWkgPSBxdWFudGl0eSBwdXJjaGFzZWQgaW4gbW9udGggaSA8PSAyMDANCiNyaSA9IHF1YW50aXR5IHB1cmNoYXNlZCBpbiBtb250aCBpID4gMjAwDQojc2kgPSByZXByZXNlbnRpbmcgdGhlIHN0b2NrIGF0IHRoZSBlbmQgb2YgbW9udGggaQ0KI2JpID0gMSBpZiA+IDIwMCB1bml0cyBhcmUgcHVyY2hhc2VkIG9uIG1vbnRoIGkNCiNkaSA9IG1vbnRobHkgZGVtYW5kDQojd2hlcmUgaSA9IG1vbnRoIDEsMiwzLDQNCiN0b3RhbCBwdXJjaGFzZSBpbiBhIGdpdmVuIG1vbnRoID0gcWkgKyByaQ0KI2NvbnN0cmFpbnRzDQoNCmBgYHtyfQ0KbGlicmFyeShscFNvbHZlQVBJKQ0KeCA8LSByZWFkLmxwKCJhc3NpZ25tZW50My5scCIpDQp4DQpzb2x2ZSh4KQ0KZ2V0Lm9iamVjdGl2ZSh4KQ0KZ2V0LnZhcmlhYmxlcyh4KQ0KZ2V0LmNvbnN0cmFpbnRzKHgpDQpnZXQuc2Vuc2l0aXZpdHkucmhzKHgpDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpkZWZpbmluaW5nIHRoZSB2YXJpYWJsZXMNCnhpID0gcXVhbnRpdHkgcHVyY2hhc2VkIGluIG1vbnRoIGkgPD0gMjAwDQp5aSA9IHF1YW50aXR5IHB1cmNoYXNlZCBpbiBtb250aCBpID4gMjAwDQpzaSA9IHJlcHJlc2VudGluZyB0aGUgc3RvY2sgYXQgdGhlIGVuZCBvZiBtb250aCBpDQpiaSA9IDEgaWYgPiAyMDAgdW5pdHMgYXJlIHB1cmNoYXNlZCBvbiBtb250aCBpDQpkaSA9IG1vbnRobHkgZGVtYW5kDQp3aGVyZSBpID0gbW9udGggMSwyLDMsNA0KdG90YWwgcHVyY2hhc2UgaW4gYSBnaXZlbiBtb250aCA9IHFpICsgcmkNCmNvbnN0cmFpbnRzDQoNCmBgYHtyfQ0KbGlicmFyeShscFNvbHZlQVBJKQ0KeCA8LSByZWFkLmxwKCJhc3NpZ25tZW50My5scCIpDQp4DQpzb2x2ZSh4KQ0KZ2V0Lm9iamVjdGl2ZSh4KQ0KZ2V0LnZhcmlhYmxlcyh4KQ0KZ2V0LmNvbnN0cmFpbnRzKHgpDQpnZXQuc2Vuc2l0aXZpdHkucmhzKHgpDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg==</div>
 
 
 
